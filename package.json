@@ -96,7 +96,8 @@
     ]
   },
   "engines": {
-    "node": ">=8.16",
+    "node": ">=0.12",
     "npm": ">=6"
-  }
+  },
+  "engineStrict" : true 
 }
