@@ -27,6 +27,7 @@ class AjouterActeurStructure extends Component {
     nom_auteur: "",
     pays_auteur: "",
     image_auteur: "",
+    categorie_ouvrage: "1",
 
 
     errortTitre_ouvrage: "",
@@ -83,6 +84,11 @@ class AjouterActeurStructure extends Component {
   changementGenre_ouvrage = (e) => {
     this.setState({ genre_ouvrage: e.target.value });
     this.setState({ errorGenre_ouvrage: "" });
+  };
+
+  changementCategorie_ouvrage = (e) => {
+    this.setState({ categorie_ouvrage: e.target.value });
+    // this.setState({ errorGenre_ouvrage: "" });
   };
 
   changementPrix_ouvrage = (e) => {
@@ -183,9 +189,8 @@ class AjouterActeurStructure extends Component {
                               image_auteur: this.state.image_auteur,
                             };
 
-                            console.log(newOuvrage);
-        
-                            API.post("ouvrages", newOuvrage)
+                            console.log(newOuvrage);                           
+                            API.post(`themes/${this.state.categorie_ouvrage}/ouvrages`, newOuvrage)
                               .then((res) => {
                                 console.log(res);
                                 console.log(res.data);
@@ -274,10 +279,7 @@ class AjouterActeurStructure extends Component {
       verificateur = false;
     }
 
-    if (this.state.prix_ouvrage == "" || this.state.prix_ouvrage == undefined) {
-      this.setState({ errorPays_ouvrage: "veuillez choisir le pays" });
-      verificateur = false;
-    }
+ 
 
     if (this.state.pays_auteur == "" || this.state.pays_auteur == undefined) {
       this.setState({ errorPays_auteur: "veuillez saisir le pays " });
@@ -347,6 +349,18 @@ class AjouterActeurStructure extends Component {
                                 <Form.Control as="select" onChange={this.changementGenre_ouvrage} >
                                 <option value="livre">livre</option>
                                 <option value="BD">BD</option>
+
+                                </Form.Control>
+                                <span>{this.state.errorGenre_ouvrage}</span>
+                              </Form.Group>
+                        </Col>
+
+                        <Col>
+                        <Form.Group controlId="exampleForm.ControlSelect1">
+                                <Form.Label>Categorie de l'ouvrage</Form.Label>
+                                <Form.Control as="select" onChange={this.changementCategorie_ouvrage} >
+                                <option value="1">Adulte</option>
+                                <option value="2">Enfant</option>
 
                                 </Form.Control>
                                 <span>{this.state.errorGenre_ouvrage}</span>

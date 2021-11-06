@@ -20,11 +20,11 @@ const WidgetsDropdownAdmin = () => {
 
   useEffect(() => {
     api.get("ouvrages").then((res) => {
-      setSumLivres(res.data);
+      setSumLivres(res.data.filter((e)=> e.genre_ouvrage === "livre"));
     });
 
     api.get("ouvrages").then((res) => {
-      setSumBD(res.data);
+      setSumBD(res.data.filter((e)=> e.genre_ouvrage === "BD"));
     });
 
     api.get("users").then((res) => {
