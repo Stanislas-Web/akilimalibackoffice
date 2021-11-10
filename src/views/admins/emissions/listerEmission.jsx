@@ -25,8 +25,9 @@ function ListerActeurStructure() {
 
     useEffect(() => {
       console.log('USE EFFECT');
-      API.get('emissions').then((res) => {
-        setEmissions(res.data);
+      API.get('ouvragesall').then((res) => {
+        setEmissions(res.data.filter((e)=> e.genre_ouvrage === "livre"));
+        console.log(emissions);
       }).catch((erreur)=> {
         console.log(erreur);
     });
@@ -73,20 +74,26 @@ function ListerActeurStructure() {
 
     const columns = [
         {
-          name: 'Nom',
-          selector: 'nom',
+          name: 'Titre ouvrage',
+          selector: 'titre_ouvrage',
           sortable: true,
           width : "250px"
         },
         {
-          name: 'Journaliste',
-          selector: 'journaliste',
+          name: 'Auteur',
+          selector: 'nom_auteur',
           sortable: true,
           width : "250px"
         },
         {
-          name: 'Description',
-          selector: 'description',
+          name: 'Prix livre',
+          selector: 'prix_ouvrage',
+          sortable: true,
+          width : "250px"
+        },
+        {
+          name: 'Catégorie livre',
+          selector: 'categorie_ouvrage',
           sortable: true,
           width : "250px"
         },
@@ -105,7 +112,7 @@ function ListerActeurStructure() {
       return (
         <div className>
           <DataTable
-          title="Liste des Emissions"
+          title="Liste des Livres"
           columns={columns}
           data={emissions}
           pagination={true}

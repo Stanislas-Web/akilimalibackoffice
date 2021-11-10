@@ -89,6 +89,7 @@ class AjouterActeurStructure extends Component {
   changementCategorie_ouvrage = (e) => {
     this.setState({ categorie_ouvrage: e.target.value });
     // this.setState({ errorGenre_ouvrage: "" });
+    console.log("data exemple"+this.state.categorie_ouvrage);
   };
 
   changementPrix_ouvrage = (e) => {
@@ -359,8 +360,11 @@ class AjouterActeurStructure extends Component {
                         <Form.Group controlId="exampleForm.ControlSelect1">
                                 <Form.Label>Categorie de l'ouvrage</Form.Label>
                                 <Form.Control as="select" onChange={this.changementCategorie_ouvrage} >
-                                <option value="1">Adulte</option>
-                                <option value="2">Enfant</option>
+                                {/* <option value="" selected disabled hidden>
+                                  sélectionnez la catégorie de l'ouvrage
+                                </option> */}
+                                <option value="1">Enfant</option>
+                                <option value="2">Adulte</option>
 
                                 </Form.Control>
                                 <span>{this.state.errorGenre_ouvrage}</span>
