@@ -44,7 +44,7 @@ const AdminDashboard = () => {
                   </h4>
                   <div className="small text-muted">{new Date().getFullYear()}</div>
                 </CCol>
-                {/* <CCol sm="7" className="d-none d-md-block">
+                <CCol sm="7" className="d-none d-md-block">
                   <CButton color="primary" className="float-right">
                     <CIcon name="cil-cloud-download" />
                   </CButton>
@@ -60,10 +60,10 @@ const AdminDashboard = () => {
                       </CButton>
                     ))}
                   </CButtonGroup>
-                </CCol> */}
+                </CCol>
               </CRow>
               <MainChartExample style={{height: '400px', marginTop: '40px'}}/>
-              {/* <AmchartMainChart tagName="mainAmchart"  style={{height: '300px', marginTop: '40px'}}/> */}
+              <AmchartMainChart tagName="mainAmchart"  style={{height: '300px', marginTop: '40px'}}/>
             </CCardBody>
           </CCard>
         </CCol>

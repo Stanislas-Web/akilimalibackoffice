@@ -60,7 +60,7 @@ const MainChartExample = (attributes) => {
         borderColor: brandInfo,
         pointHoverBackgroundColor: brandInfo,
         borderWidth: 2,
-        data: data1,
+        data: [10, 20, 123, 40, 110, 60, 70, 80, 90, 100, 110, 120],
       },
       {
         label: "BD",
@@ -68,7 +68,7 @@ const MainChartExample = (attributes) => {
         borderColor: brandSuccess,
         pointHoverBackgroundColor: brandSuccess,
         borderWidth: 2,
-        data: data2,
+        data: [120, 190, 3, 5, 2, 3, 30, 3, 5, 2, 3, 20],
       },
       // {
       //   label: 'My Third dataset',

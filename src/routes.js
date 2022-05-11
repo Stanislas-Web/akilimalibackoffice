@@ -34,6 +34,7 @@ const CasSoumisActeur=React.lazy(() => import('./views/structures/CasSoumisActeu
 const AjoutVBG = React.lazy(() => import('./views/structures/vbg/ActeurAjouterVBG'));
 const ActeurListerVBG = React.lazy(() => import('./views/structures/vbg/ActeurListerVBG'));
 const ActeurModifierVBG = React.lazy(() => import('./views/structures/vbg/ActeurModifierVBG'));
+// const ExemplePDF = React.lazy(() => import('./views/admins/podcasts/Pdf'));
 
 
 
@@ -48,7 +49,8 @@ const routes = [
   { path: '/admin/ajouterpodcast', name: 'Ajouter un Podcast', component: AjouterPodcast },
   { path: '/admin/listerlivre', name: 'Voir Les Livres', component: ListerPodcast },
   { path: '/admin/ajouterbanniere', name: 'Ajouter une image publicitaire ', component: AjouterBanniere },
-  { path: '/admin/listerbd', name: 'Voir Les BDs ', component: ListerBanniere },
+  { path: '/admin/listerbd', name: 'Voir Les BD ', component: ListerBanniere },
+  // { path: '/admin/pdf', name: 'Lire le PDF', component: ExemplePDF },
 
   //   Admin
   

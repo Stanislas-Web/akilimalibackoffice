@@ -119,7 +119,7 @@ const admin_nav = [
     _tag: "CSidebarNavDropdown",
     name: "Ouvrages",
     to: "/theme/colors",
-    icon: "cil-list",
+    // icon: "cil-list",
     _children: [
       {
         _tag: "CSidebarNavItem",
@@ -138,7 +138,7 @@ const admin_nav = [
     _tag: "CSidebarNavDropdown",
     name: "Livres",
     to: "/theme/colors",
-    icon: "cil-home",
+    // icon: "cil-home",
     _children: [
       {
         _tag: "CSidebarNavItem",
@@ -152,7 +152,7 @@ const admin_nav = [
     _tag: "CSidebarNavDropdown",
     name: "BD",
     to: "/theme/colors",
-    icon: "cil-home",
+    // icon: "cil-home",
     _children: [
       {
         _tag: "CSidebarNavItem",
